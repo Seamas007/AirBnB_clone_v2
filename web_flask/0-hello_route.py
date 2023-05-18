@@ -1,18 +1,14 @@
-#!/usr/bin/python3
-"""Starts Flask web app
-Listening on 0.0.0.0:5000
-Route '/' displays "Hello HBNB!"
-"""
+# Import Flask module
 from flask import Flask
 
+# Create an instance of the Flask application
 app = Flask(__name__)
 
+# Define the route and its corresponding function
+@app.route('/airbnb-onepage/', strict_slashes=False)
+def hello():
+    return "Hello AirBnB Clone v2!"
 
-@app.route('/', strict_slashes=False)
-def hello_route():
-    """Displays 'Hello HBNB!'"""
-    return "Hello HBNB!"
-
-
+# Run the application if executed directly
 if __name__ == "__main__":
-    app.run(host="0.0.0.0")
+    app.run(host='0.0.0.0', port=5000)
